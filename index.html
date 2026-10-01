@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cane & Bite - Roti Cane, Sandwich & Yogurt Sehat</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome untuk Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- NAVBAR -->
+    <nav class="bg-white/90 backdrop-blur-md sticky top-0 z-50 shadow-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <span class="bg-amber-500 text-white p-2 rounded-xl font-bold text-xl shadow-md"><i class="fa-solid fa-utensils"></i></span>
+                    <span class="font-extrabold text-xl text-gray-900 tracking-wide">Cane<span class="text-amber-500">&Bite</span></span>
+                </div>
+
+                <!-- Desktop Menu Links -->
+                <div class="hidden md:flex items-center space-x-8 font-medium text-sm">
+                    <a href="#home" class="text-gray-700 hover:text-amber-500 transition">Home</a>
+                    <a href="#menu" class="text-gray-700 hover:text-amber-500 transition">Menu</a>
+                    <a href="#about" class="text-gray-700 hover:text-amber-500 transition">About Us</a>
+                    <a href="#contact" class="text-gray-700 hover:text-amber-500 transition">Contact</a>
+                </div>
+
+                <!-- Right Action (Cart Button) -->
+                <div class="flex items-center space-x-4">
+                    <button onclick="toggleCart()" class="relative p-2.5 bg-amber-50 hover:bg-amber-100 text-amber-600 rounded-full transition shadow-sm">
+                        <i class="fa-solid fa-cart-shopping text-lg"></i>
+                        <span id="cart-badge" class="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center hidden">0</span>
+                    </button>
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-600 hover:text-gray-900 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-gray-100 px-4 pt-2 pb-4 space-y-2">
+            <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-amber-50 hover:text-amber-600">Home</a>
+            <a href="#menu" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-amber-50 hover:text-amber-600">Menu</a>
+            <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-amber-50 hover:text-amber-600">About Us</a>
+            <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-amber-50 hover:text-amber-600">Contact</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION (HOME) -->
+    <section id="home" class="relative bg-gradient-to-r from-amber-500 to-orange-600 text-white py-20 lg:py-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <span class="bg-white/20 backdrop-blur-md text-white text-xs font-semibold px-3 py-1.5 rounded-full uppercase tracking-wider">🌟 Nikmati Kelezatan Premium</span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">Roti Cane Gurih, Sandwich & Yogurt Segar</h1>
+                    <p class="text-amber-100 text-base sm:text-lg">Pilihan sarapan dan cemilan terbaik yang dibuat dari bahan-bahan berkualitas tinggi, siap memanjakan lidah Anda setiap hari.</p>
+                    <div class="flex space-x-4 pt-2">
+                        <a href="#menu" class="bg-white text-amber-600 hover:bg-amber-50 font-bold px-8 py-3.5 rounded-xl shadow-lg transition transform hover:-translate-y-0.5">Pesan Sekarang</a>
+                        <a href="#about" class="border border-white/40 hover:bg-white/10 font-bold px-8 py-3.5 rounded-xl transition">Tentang Kami</a>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <img src="https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&w=600&q=80" alt="Hero Image" class="rounded-3xl shadow-2xl object-cover h-80 w-full max-w-md border-4 border-white/20">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MENU SECTION -->
+    <section id="menu" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center space-y-3 mb-12">
+            <h2 class="text-3xl font-extrabold text-gray-950">Menu Favorit Kami</h2>
+            <p class="text-gray-500 max-w-xl mx-auto text-sm sm:text-base">Pilih menu favorit Anda mulai dari Roti Cane khas, Sandwich mengenyangkan, hingga Yogurt segar.</p>
+        </div>
+
+        <!-- Grid Menu Dynamic -->
+        <div id="menu-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Data Menu dirender via JavaScript -->
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="bg-white py-20 border-y border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80" alt="Tentang Kami" class="rounded-3xl shadow-md object-cover h-96 w-full">
+                </div>
+                <div class="space-y-6">
+                    <span class="text-amber-600 font-bold tracking-wider uppercase text-xs">Tentang Cane & Bite</span>
+                    <h2 class="text-3xl font-extrabold text-gray-900">Menyajikan Makanan Berkualitas dengan Cinta Sejak 2024</h2>
+                    <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+                        Cane & Bite hadir untuk Anda yang mencari cita rasa autentik Roti Cane bertekstur lembut dan berlapis, Sandwich segar penuh nutrisi, serta Yogurt sehat pencuci mulut yang menyegarkan. Kami berkomitmen menjaga kebersihan, kualitas rasa, dan kepuasan pelanggan di setiap sajian.
+                    </p>
+                    <div class="grid grid-cols-3 gap-4 pt-4 border-t border-gray-100">
+                        <div>
+                            <h3 class="text-2xl font-bold text-amber-600">100%</h3>
+                            <p class="text-xs text-gray-500">Bahan Alami</p>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-amber-600">15+</h3>
+                            <p class="text-xs text-gray-500">Varian Menu</p>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-amber-600">4.9</h3>
+                            <p class="text-xs text-gray-500">Rating Pelanggan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-amber-50 rounded-3xl p-8 sm:p-12 border border-amber-100 shadow-sm grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="space-y-6">
+                <div>
+                    <span class="text-amber-600 font-bold uppercase text-xs">Hubungi Kami</span>
+                    <h2 class="text-3xl font-extrabold text-gray-900 mt-1">Ada Pertanyaan atau Ingin Pesan Khusus?</h2>
+                </div>
+                <p class="text-gray-600 text-sm">Silakan kunjungi kedai kami atau hubungi kontak di bawah ini untuk pemesanan skala besar (acara, kantor, dll).</p>
+                <div class="space-y-4 text-sm">
+                    <div class="flex items-center space-x-3 text-gray-700">
+                        <i class="fa-solid fa-location-dot text-amber-600 text-lg"></i>
+                        <span>Jl. Kuliner Sehat No. 45, Jakarta</span>
+                    </div>
+                    <div class="flex items-center space-x-3 text-gray-700">
+                        <i class="fa-solid fa-phone text-amber-600 text-lg"></i>
+                        <span>+62 838-4997-1170</span>
+                    </div>
+                    <div class="flex items-center space-x-3 text-gray-700">
+                        <i class="fa-solid fa-envelope text-amber-600 text-lg"></i>
+                        <span>support@caneandbite.com</span>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-gray-100 space-y-4">
+                <h3 class="font-bold text-lg text-gray-900">Kirim Pesan Cepat</h3>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-600 mb-1">Nama Anda</label>
+                    <input type="text" id="contact-name" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-amber-500" placeholder="Masukkan nama...">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-gray-600 mb-1">Pesan</label>
+                    <textarea id="contact-message" rows="3" class="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-amber-500" placeholder="Tulis pesan atau pertanyaan..."></textarea>
+                </div>
+                <button onclick="sendContactWhatsApp()" class="w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 rounded-xl text-sm shadow transition">Kirim via WhatsApp</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+            <div class="flex justify-center items-center space-x-2">
+                <span class="bg-amber-500 text-white p-1.5 rounded-lg font-bold text-base"><i class="fa-solid fa-utensils"></i></span>
+                <span class="font-extrabold text-lg tracking-wide">Cane<span class="text-amber-500">&Bite</span></span>
+            </div>
+            <p class="text-gray-400 text-xs">© 2026 Cane & Bite. Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+    <!-- SHOPPING CART DRAWER -->
+    <div id="cart-drawer" class="fixed inset-y-0 right-0 z-50 w-full max-w-md bg-white shadow-2xl border-l border-gray-100 hidden flex flex-col justify-between">
+        <!-- Drawer Header -->
+        <div class="p-6 border-b border-gray-100 flex items-center justify-between">
+            <h3 class="font-extrabold text-lg text-gray-900 flex items-center space-x-2">
+                <i class="fa-solid fa-cart-shopping text-amber-500"></i>
+                <span>Keranjang Belanja</span>
+            </h3>
+            <button onclick="toggleCart()" class="text-gray-400 hover:text-gray-600 text-xl font-bold">&times;</button>
+        </div>
+
+        <!-- Drawer Body Items -->
+        <div id="cart-items-container" class="p-6 overflow-y-auto flex-1 space-y-4">
+            <!-- Item keranjang akan dirender di sini -->
+        </div>
+
+        <!-- Drawer Footer (Checkout Form & Total) -->
+        <div class="p-6 border-t border-gray-100 bg-gray-50 space-y-4">
+            <div class="space-y-3">
+                <input type="text" id="customer-name" placeholder="Nama Pemesan" class="w-full px-3 py-2 border border-gray-200 rounded-xl text-xs bg-white focus:outline-none focus:border-amber-500">
+                <input type="text" id="customer-address" placeholder="Alamat Pengiriman / Meja" class="w-full px-3 py-2 border border-gray-200 rounded-xl text-xs bg-white focus:outline-none focus:border-amber-500">
+            </div>
+            <div class="flex items-center justify-between font-bold text-gray-900 text-base pt-2 border-t border-gray-200">
+                <span>Total:</span>
+                <span id="cart-total" class="text-amber-600 font-extrabold">Rp 0</span>
+            </div>
+            <button onclick="checkoutWhatsApp()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl text-sm shadow-md transition flex items-center justify-center space-x-2">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>Pesan via WhatsApp</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Script JS -->
+    <script src="script.js"></script>
+</body>
+</html>
